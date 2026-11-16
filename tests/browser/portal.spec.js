@@ -21,13 +21,16 @@ test('de homepage is bruikbaar met toetsenbord en op mobiel', async ({ page }) =
     await expect(page.locator('html')).not.toHaveClass(/lenis/);
     await page.evaluate(() => document.fonts.ready);
     expect(await page.evaluate(() => document.fonts.check('700 20px "Mona Sans"'))).toBe(true);
-    expect(await page.locator('.hero-photo').evaluate(image => image.complete && image.naturalWidth > 0)).toBe(true);
+    const cover = page.locator('.hero-photo');
+    expect(await cover.evaluate(image => image.complete && image.naturalWidth > 0)).toBe(true);
+    expect(await cover.boundingBox()).toMatchObject({ x: 0, width: 1440 });
     await page.locator('.service-pair').first().scrollIntoViewIfNeeded();
     await expect.poll(() => page.locator('.service-photo').first().evaluate(image => image.complete && image.naturalWidth > 0)).toBe(true);
     expect((await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()).violations).toEqual([]);
     for (const width of [1024, 768, 390, 320, 390]) {
         await page.setViewportSize({ width, height: 844 });
         await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth)).toBe(width);
+        expect(await cover.boundingBox()).toMatchObject({ x: 0, width });
     }
     await page.locator('.mobile-menu summary').focus();
     await page.keyboard.press('Enter');
@@ -64,6 +67,13 @@ test('de homepage is bruikbaar met toetsenbord en op mobiel', async ({ page }) =
     await expect(page.getByText('Open de melding vanuit het overzicht.', { exact: false })).toBeVisible();
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await expect.poll(coverShift).toBe(0);
+
+    await page.goto('/?intro=licht');
+    await expect(page.locator('.cover')).toHaveClass(/cover-lit/);
+    await expect(page.locator('.cover-shutter')).toHaveCount(0);
+    await expect(cover).toHaveCSS('filter', 'none');
+    expect(await cover.boundingBox()).toMatchObject({ x: 0, width: 1440 });
+    await expect(page.getByRole('link', { name: 'Bekijk onze service' })).toHaveAttribute('href', '#onderhoud');
 });
 
 test('van melding naar afspraak en afronding met gescheiden bedrijven', async ({ browser }) => {

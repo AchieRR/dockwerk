@@ -45,3 +45,9 @@ De Vite-build, 9 PHP-tests (41 assertions), Pint en 2 Chromium-tests slaagden. O
 Ahmad vroeg om de Glacier-versie te bewaren en een opvallendere variant te maken. De tag `glacier-v1` wijst naar de bewaarde versie. Op `codex/dockwerk-motion` opent een geanimeerde stalen roldeur over de avondfoto en is de serviceknop ijsblauw.
 
 `npm run build`, `php artisan test --compact` (9 tests, 41 assertions), Pint en `npm run test:browser` (2 tests) slaagden. De roldeur is in Chromium op desktop en in mobiele aanraakemulatie gecontroleerd. De foto en serviceknop werken ook met minder beweging en met JavaScript uitgeschakeld.
+
+## Schermbrede foto en tweede opening
+
+Op verzoek van Ahmad loopt de openingsfoto in beide varianten tot de linker- en rechterrand. De homepage opent standaard met de roldeur. De [lichtvariant](http://127.0.0.1:8765/?intro=licht) heeft een gecentreerde compositie en laat het licht op de foto geleidelijk opkomen.
+
+De build, Pint, 9 PHP-tests en 2 Chromium-tests slaagden. De browsertest controleert de fotobreedte van 320 tot 1440 px en de lichtvariant met minder beweging. Beide openingen zijn apart in Chromium gecontroleerd. Op 320 px had de lichtvariant geen horizontale overflow of overtredingen van de geselecteerde axe-regels.

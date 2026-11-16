@@ -14,11 +14,23 @@ export function startHomeMotion() {
         const coverPicture = cover.querySelector('.cover-picture');
         const backdropGlow = document.querySelector('.glacier-glow');
 
-        gsap.timeline({ defaults: { ease: 'power3.out' } })
-            .fromTo(shutter, { yPercent: -15, y: 0 }, { yPercent: -100, y: 0, ease: 'power2.inOut', duration: 1.18, clearProps: 'transform' }, 0)
-            .from(photograph, { scale: 1.11, duration: 1.55 }, 0)
+        const intro = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+        if (shutter) {
+            intro
+                .fromTo(shutter, { yPercent: -15, y: 0 }, { yPercent: -100, y: 0, ease: 'power2.inOut', duration: 1.18, clearProps: 'transform' }, 0)
+                .from(photograph, { scale: 1.11, duration: 1.55 }, 0);
+        } else {
+            intro.fromTo(photograph,
+                { scale: 1.045, filter: 'brightness(0.48) saturate(0.72)' },
+                { scale: 1, filter: 'brightness(1) saturate(1)', duration: 1.65, ease: 'power2.inOut', clearProps: 'filter' },
+                0,
+            );
+        }
+
+        intro
             .from(wordmark, { y: 38, opacity: 0.92, duration: 1 }, 0.17)
-            .from('.cover-meta', { y: 17, duration: 0.8 }, 0.27);
+            .from(cover.querySelector('.cover-meta'), { y: 17, duration: 0.8 }, 0.27);
 
         gsap.to(coverPicture, {
             yPercent: 13,

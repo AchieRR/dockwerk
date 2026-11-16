@@ -1,12 +1,17 @@
 <x-layout title="Onderhoud aan industriële deuren" mode="home">
-    @php($portalUrl = auth()->check() ? route('portal.index') : route('login'))
+    @php
+        $portalUrl = auth()->check() ? route('portal.index') : route('login');
+        $lightIntro = request()->query('intro') === 'licht';
+    @endphp
 
-    <section class="cover" aria-labelledby="hero-title">
+    <section @class(['cover', 'cover-lit' => $lightIntro]) aria-labelledby="hero-title">
         <picture class="cover-picture">
             <source media="(max-width: 620px)" srcset="{{ asset('images/dockwerk-avond-mobiel.webp') }}">
             <img class="hero-photo" src="{{ asset('images/dockwerk-avond.webp') }}" alt="" fetchpriority="high" width="1536" height="1024">
         </picture>
-        <div class="cover-shutter" aria-hidden="true"></div>
+        @unless ($lightIntro)
+            <div class="cover-shutter" aria-hidden="true"></div>
+        @endunless
         <div class="shell cover-content">
             <h1 id="hero-title">dockwerk<span class="sr-only"> · Service voor bedrijfsdeuren</span></h1>
             <div class="cover-meta">
