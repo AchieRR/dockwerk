@@ -6,10 +6,11 @@
             <source media="(max-width: 620px)" srcset="{{ asset('images/dockwerk-avond-mobiel.webp') }}">
             <img class="hero-photo" src="{{ asset('images/dockwerk-avond.webp') }}" alt="" fetchpriority="high" width="1536" height="1024">
         </picture>
+        <div class="cover-shutter" aria-hidden="true"></div>
         <div class="shell cover-content">
             <h1 id="hero-title">dockwerk<span class="sr-only"> · Service voor bedrijfsdeuren</span></h1>
             <div class="cover-meta">
-                <a class="cover-jump" href="#onderhoud" aria-label="Bekijk wat we doen"><span aria-hidden="true">↓</span> Wat we doen</a>
+                <a class="cover-jump" href="#onderhoud"><span aria-hidden="true">↓</span> Bekijk onze service</a>
                 <p>Onderhoud en storingen aan industriële deuren. Volg de afspraak en afhandeling in je klantportaal.</p>
             </div>
         </div>

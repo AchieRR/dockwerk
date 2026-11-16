@@ -9,13 +9,15 @@ export function startHomeMotion() {
     motion.add('(prefers-reduced-motion: no-preference)', () => {
         const cover = document.querySelector('.cover');
         const wordmark = cover.querySelector('h1');
+        const shutter = cover.querySelector('.cover-shutter');
         const photograph = cover.querySelector('.hero-photo');
         const coverPicture = cover.querySelector('.cover-picture');
         const backdropGlow = document.querySelector('.glacier-glow');
 
         gsap.timeline({ defaults: { ease: 'power3.out' } })
+            .fromTo(shutter, { yPercent: -15, y: 0 }, { yPercent: -100, y: 0, ease: 'power2.inOut', duration: 1.18, clearProps: 'transform' }, 0)
             .from(photograph, { scale: 1.11, duration: 1.55 }, 0)
-            .from(wordmark, { y: 38, opacity: 0.92, duration: 1 }, 0.09)
+            .from(wordmark, { y: 38, opacity: 0.92, duration: 1 }, 0.17)
             .from('.cover-meta', { y: 17, duration: 0.8 }, 0.27);
 
         gsap.to(coverPicture, {

@@ -39,3 +39,9 @@ De website is als lokale portfoliodemo gebouwd. `DOCKWERK_DEMO` staat standaard 
 Op verzoek van Ahmad loopt Glacier van de navigatie tot de voettekst. De gedeelde CSS-laag staat achter de homepage, het inlogscherm, het klantportaal en de werkplaats. De openingsfoto heeft ruimte langs de randen. Formulieren en tabellen staan op lichte vlakken.
 
 De Vite-build, 9 PHP-tests (41 assertions), Pint en 2 Chromium-tests slaagden. Op de homepage is de laag op desktop en mobiel even breed en hoog als de hele pagina. Inloggen, het klantportaal en de werkplaats zijn ook in Chromium bekeken. De bijgewerkte schermafbeeldingen staan in de [README](../README.md#verder-lezen).
+
+## Variant met roldeur
+
+Ahmad vroeg om de Glacier-versie te bewaren en een opvallendere variant te maken. De tag `glacier-v1` wijst naar de bewaarde versie. Op `codex/dockwerk-motion` opent een geanimeerde stalen roldeur over de avondfoto en is de serviceknop ijsblauw.
+
+`npm run build`, `php artisan test --compact` (9 tests, 41 assertions), Pint en `npm run test:browser` (2 tests) slaagden. De roldeur is in Chromium op desktop en in mobiele aanraakemulatie gecontroleerd. De foto en serviceknop werken ook met minder beweging en met JavaScript uitgeschakeld.

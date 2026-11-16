@@ -8,7 +8,7 @@ Glacier is de doorlopende achtergrond van de homepage, het inlogscherm, het klan
 
 ## Beweging
 
-GSAP laat de cover bij openen van dichtbij naar de ruststand bewegen. Bij scrollen verschuift de foto binnen het kader, zodat de eerste inhoud eronder tevoorschijn komt. In de rest van de homepage schuiven specifieke inhoudsblokken licht in beeld. De gloed van Glacier beweegt mee met de scroll. Lenis geeft een precieze aanwijzer vloeiende scroll, en op touch blijft de scroll native. Lenis wordt alleen geladen voor precies aanwijzen. Bij een voorkeur voor minder beweging blijven de animatiebundels bij de eerste weergave buiten de download. Als de voorkeur tijdens het bezoek verandert, past de site de JavaScript-animaties en scrollverzachting aan.
+Vlak na het openen schuift een stalen roldeur omhoog en komt de hele avondfoto in beeld. De roldeur bestaat uit CSS en beweegt mee met de bestaande GSAP-tijdlijn. De foto, tekst en serviceknop zijn direct beschikbaar. Bij scrollen verschuift de foto binnen het kader. In de rest van de homepage schuiven specifieke inhoudsblokken licht in beeld en beweegt de gloed van Glacier mee. Lenis wordt alleen geladen voor precies aanwijzen. Op een aanraakscherm blijft de scroll native. Bij een voorkeur voor minder beweging blijven de animatiebundels bij de eerste weergave buiten de download. Als de voorkeur tijdens het bezoek verandert, past de site de JavaScript-animaties en scrollverzachting aan.
 
 De FAQ en het mobiele menu gebruiken native HTML-disclosures. De foto van het laadperron heeft een afzonderlijke mobiele uitsnede. Mona Sans en de drie gegenereerde projectfoto’s staan lokaal in de app.
 

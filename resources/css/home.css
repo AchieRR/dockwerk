@@ -18,14 +18,27 @@
 .cover-picture, .cover-picture img, .cover::after { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
 .cover-picture { z-index: -2; }
 .cover-picture img { object-fit: cover; object-position: center 57%; }
+.cover-shutter {
+    position: absolute;
+    inset: 0 0 44%;
+    z-index: -1;
+    pointer-events: none;
+    transform: translateY(-100%);
+    border-bottom: 2px solid #b7d1e8;
+    background:
+        repeating-linear-gradient(180deg, #bfd2e620 0 1px, transparent 1px 21px, #030a1390 22px 24px),
+        linear-gradient(105deg, #101b2c, #26374c 54%, #162236);
+}
 .cover::after { content: ''; z-index: -1; background: linear-gradient(180deg, transparent 35%, #0b152b24 54%, #081426e8 100%); }
 .cover-content { padding-block: 80px 32px; }
-.cover h1 { font-weight: 575; line-height: .91; font-size: clamp(6rem, 15.65vw, 14.8rem); letter-spacing: -.073em; margin-left: -.05em; margin-block: 0 35px; }
+.cover h1 { font-weight: 575; line-height: .91; font-size: clamp(6rem, 15.65vw, 14.8rem); letter-spacing: -.04em; margin-left: -.05em; margin-block: 0 35px; }
 .cover-meta { display: flex; justify-content: space-between; align-items: end; gap: 24px; }
 .cover-meta p { max-width: 33ch; font-size: .96rem; line-height: 1.48; color: #f1f4ff; }
-.cover-jump { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; white-space: nowrap; font-size: .83rem; font-weight: 640; }
-.cover-jump span { width: 35px; height: 35px; display: grid; place-items: center; border: 1px solid #ffffffb0; border-radius: 50%; transition: transform .25s, background .25s, color .25s; }
-.cover-jump:hover span, .cover-jump:focus-visible span { transform: translateY(3px); background: white; color: #151b27; }
+.cover-jump { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 13px 0 8px; width: fit-content; border-radius: 4px; background: #ddf3ff; color: #121f34; white-space: nowrap; font-size: .83rem; font-weight: 680; transition: background .22s; }
+.cover-jump span { width: 25px; height: 25px; display: grid; place-items: center; border-radius: 50%; background: #17273e; color: #e9f6ff; transition: transform .22s; }
+.cover-jump:hover { background: #fff; }
+.cover-jump:focus-visible { outline-color: #ddf3ff; }
+.cover-jump:hover span, .cover-jump:focus-visible span { transform: translateY(2px); }
 .studio-label, .sheet-top { font-size: .73rem; font-weight: 680; color: var(--studio-muted); letter-spacing: .06em; text-transform: uppercase; }
 .service-section, .faq-section { padding-block: clamp(60px, 8vw, 119px); scroll-margin-top: 85px; }
 .service-intro, .faq-section { display: grid; grid-template-columns: 1fr 1.2fr; gap: 38px; align-items: start; }
