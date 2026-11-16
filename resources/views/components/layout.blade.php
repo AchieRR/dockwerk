@@ -23,7 +23,16 @@
                 <nav class="nav-links" aria-label="Hoofdnavigatie">
                     <a href="#werkwijze">Werkwijze</a>
                     <a href="#onderhoud">Onderhoud</a>
+                    <a href="#vragen">Vragen</a>
                 </nav>
+                <details class="mobile-menu">
+                    <summary aria-label="Menu"><x-dock-icon name="list" :size="20" /></summary>
+                    <nav aria-label="Mobiele navigatie">
+                        <a href="#onderhoud">Onderhoud</a>
+                        <a href="#werkwijze">Werkwijze</a>
+                        <a href="#vragen">Vragen</a>
+                    </nav>
+                </details>
             @endif
             @auth
                 @if ($mode === 'home')

@@ -1,13 +1,15 @@
 # Ontwerp van Dockwerk
 
-De openbare homepage is opgezet als een site voor een technisch servicebedrijf. Het lichte canvas, de brede foto van een laadperron en de beperkte typografie volgen de referentiestudie. Mona Sans wordt lokaal geladen. Onder de foto staat één werkstroom met drie stappen. De klant- en medewerkersschermen gebruiken vaste plekken voor meldingen, acties en terugkoppeling.
+De homepage is opgebouwd rond een brede avondfoto van een laadperron. Het woordmerk staat onderin het beeld en de kernnavigatie is compact. Daarna volgen twee onderdelen met foto en tekst naast elkaar, het klantportaalproces en een FAQ. De Nederlandse copy beschrijft de taken die daadwerkelijk in het portaal werken.
 
 ## Glacier
 
-De aangeleverde referentie heeft een heldere cyaan kern, diepblauw aan de linkerkant, violet aan de rechterkant en dunne witte naden. De implementatie gebruikt drie radiale kleurvelden met blur, zeven semi-transparante banen met randlicht en een elliptisch masker. Beide lagen lopen naar een lichte rand uit. Het ontwerpvlak staat naast de werkstroom. Alleen de gloed verschuift subtiel bij scrollen op een apparaat met precieze aanwijzer. Reduced motion behoudt de volledige statische compositie.
+Glacier zit achter de volledige sectie ‘Van storing tot herstel’. Drie radiale kleurvelden maken een cyaan kern, kobaltblauw links en violet rechts. Een tweede laag van herhaalde lichtnaden verwijst naar de verticale banen in Ahmads referentie. De boven- en onderranden lopen uit naar een lichtblauw vlak. Tekst, stappen en de link naar het portaal staan voor de achtergrond.
 
-## Foto’s en logo
+## Beweging
 
-De laadperronfoto en de foto van de geleider zijn voor Dockwerk gegenereerd. Het logo is als eigen vector getekend. Referentiewebsites leveren compositie-inspiratie.
+GSAP laat de cover bij openen van dichtbij naar de ruststand bewegen. Bij scrollen verschuift de foto binnen het kader, zodat de eerste inhoud eronder tevoorschijn komt. In de rest van de homepage schuiven specifieke inhoudsblokken licht in beeld. De gloed van Glacier beweegt mee met de scroll. Lenis geeft een precieze aanwijzer vloeiende scroll, en op touch blijft de scroll native. Lenis wordt alleen geladen voor precies aanwijzen. Bij een voorkeur voor minder beweging blijven de animatiebundels bij de eerste weergave buiten de download. Als de voorkeur tijdens het bezoek verandert, past de site de JavaScript-animaties en scrollverzachting aan.
 
-Zie [het referentieonderzoek](docs/REFERENTIES.md) voor de onderbouwing en de gebruikte bouwbrief.
+De FAQ en het mobiele menu gebruiken native HTML-disclosures. De foto van het laadperron heeft een afzonderlijke mobiele uitsnede. Mona Sans en de drie gegenereerde projectfoto’s staan lokaal in de app.
+
+[Referenties en werkwijze](docs/REFERENTIES.md) · [Browservideo](docs/screenshots/dockwerk-motion.mp4)

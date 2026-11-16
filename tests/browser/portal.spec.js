@@ -13,7 +13,7 @@ test('de homepage is bruikbaar met toetsenbord en op mobiel', async ({ page }) =
     await page.setViewportSize({ width: 1440, height: 900 });
     const response = await page.goto('/');
     expect(response.status()).toBe(200);
-    await expect(page.getByRole('heading', { level: 1 })).toContainText('bedrijfsdeuren.');
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('Service voor bedrijfsdeuren');
     await page.keyboard.press('Tab');
     await expect(page.getByRole('link', { name: 'Naar inhoud' })).toBeFocused();
     await page.keyboard.press('Enter');
@@ -22,14 +22,19 @@ test('de homepage is bruikbaar met toetsenbord en op mobiel', async ({ page }) =
     await page.evaluate(() => document.fonts.ready);
     expect(await page.evaluate(() => document.fonts.check('700 20px "Mona Sans"'))).toBe(true);
     expect(await page.locator('.hero-photo').evaluate(image => image.complete && image.naturalWidth > 0)).toBe(true);
-    await page.locator('.studio-maintenance').scrollIntoViewIfNeeded();
-    await expect.poll(() => page.locator('.studio-maintenance img').evaluate(image => image.complete && image.naturalWidth > 0)).toBe(true);
+    await page.locator('.service-pair').first().scrollIntoViewIfNeeded();
+    await expect.poll(() => page.locator('.service-photo').first().evaluate(image => image.complete && image.naturalWidth > 0)).toBe(true);
     expect((await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()).violations).toEqual([]);
     for (const width of [1024, 768, 390, 320, 390]) {
         await page.setViewportSize({ width, height: 844 });
         await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth)).toBe(width);
     }
-    await page.getByRole('link', { name: 'Open klantportaal' }).click();
+    await page.locator('.mobile-menu summary').focus();
+    await page.keyboard.press('Enter');
+    await expect(page.getByRole('navigation', { name: 'Mobiele navigatie' })).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(page.getByRole('navigation', { name: 'Mobiele navigatie' })).toBeHidden();
+    await page.getByRole('link', { name: 'Klantportaal', exact: true }).click();
     await expect(page.getByRole('heading', { name: 'Welkom terug.' })).toBeVisible();
     await page.getByRole('button', { name: 'Noordkade', exact: true }).click();
     await expect(page.getByLabel('E-mailadres')).toHaveValue('noordkade@dockwerk.test');
@@ -40,8 +45,22 @@ test('de homepage is bruikbaar met toetsenbord en op mobiel', async ({ page }) =
     await page.emulateMedia({ reducedMotion: 'no-preference' });
     await page.goto('/');
     await expect(page.locator('html')).toHaveClass(/lenis/);
+    const coverShift = () => page.locator('.cover-picture').evaluate((element) => {
+        const transform = getComputedStyle(element).transform;
+        return transform === 'none' ? 0 : new DOMMatrix(transform).m42;
+    });
+    await page.evaluate(() => window.scrollTo(0, 420));
+    await expect.poll(coverShift).toBeGreaterThan(24);
     await page.getByRole('link', { name: 'Werkwijze', exact: true }).click();
-    await expect(page.locator('.glacier')).toBeInViewport();
+    await expect(page.locator('.workflow-section')).toBeInViewport();
+    expect(await page.locator('.glacier').evaluate((element) => {
+        return getComputedStyle(element).position === 'absolute'
+            && element.getBoundingClientRect().width === element.parentElement.getBoundingClientRect().width;
+    })).toBe(true);
+    await page.getByText('Waar vind ik mijn afspraakdatum?', { exact: true }).click();
+    await expect(page.getByText('Open de melding vanuit het overzicht.', { exact: false })).toBeVisible();
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await expect.poll(coverShift).toBe(0);
 });
 
 test('van melding naar afspraak en afronding met gescheiden bedrijven', async ({ browser }) => {

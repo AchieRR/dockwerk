@@ -14,16 +14,16 @@ Beoordeeld voor Dockwerk op 15 november 2026. Skills zijn ontwikkelinstructies. 
 | `web-design-guidelines` | Referentie voor semantiek, formulieren, toetsenbordfocus en motion. Geautomatiseerde a11y-controle met axe. [Bron](https://github.com/vercel-labs/agent-skills/blob/main/skills/web-design-guidelines) |
 | `sites` | Lokale uitwerking en browserpreview. De app draait op PHP met een lokale database. |
 | `awwwards` en `jury` uit `juliobsz/skills` | Geraadpleegd voor art direction, een herkenbare visuele compositie en toetsbare visuele QA. Er is geen externe juryscore aan de site toegekend. [Bron](https://github.com/juliobsz/skills) |
-| `gsap-core`, `gsap-performance`, `gsap-scrolltrigger` | Subtiele beweging van de Glacier-gloed op de homepage, met transforms en ondersteuning voor reduced motion. [GSAP](https://gsap.com/docs/v3/) |
+| `gsap-core`, `gsap-performance`, `gsap-scrolltrigger` | Cover-intro, scrollparallax, sectie-entrées en beweging van de Glacier-achtergrond, met transforms en ondersteuning voor reduced motion. [GSAP](https://gsap.com/docs/v3/) |
 | `lenis` | Soepel scrollen op de homepage bij een precieze aanwijzer en zonder voorkeur voor minder beweging. [Lenis](https://github.com/darkroomengineering/lenis) |
 | `playwright-cli` | De lokale skill gebruikt als referentie voor browsercontrole. De reproduceerbare tests en screenshots gebruiken Playwright Test en Chromium. [Playwright](https://playwright.dev/) |
 | `verification-before-completion` | Werkstatus baseren op uitgevoerde build, tests en browsercontrole. |
 | RTK | Windows-versie 1.2.0 uit de officiële GitHub-release, SHA-256 gecontroleerd. Gebruikt voor Git-uitvoer. Geïnstalleerd onder `%LOCALAPPDATA%\DockwerkTools`, zonder globale automatisering. [RTK](https://github.com/rtk-ai/rtk/releases/tag/v1.2.0) |
 | Obsidian | Documentatie is een lokale Markdown-vault met [Start.md](Start.md) als index. Open `docs` als vault als Obsidian op je pc beschikbaar is. |
 | MotionSites | Ontwerpreferentie voor beweging en opbouw van de hero. [MotionSites](https://www.motionsites.ai/) |
-| ImageGen en logo | Twee fictieve industriële beelden gegenereerd en lokaal als WebP geleverd. Het Dockwerk-beeldmerk en woordmerk zijn voor dit project gemaakt. |
+| ImageGen en logo | Drie fictieve industriële beelden gegenereerd en lokaal als WebP geleverd. Het Dockwerk-beeldmerk en woordmerk zijn voor dit project gemaakt. |
 | Mona Sans | Lokaal geladen variabel lettertype. [Licentie in de repo](../public/fonts/OFL-Mona-Sans.txt). |
-| Glacier | Gekozen uit Ahmads vier beeldreferenties. De kleuren #2F6BFF, #6FD3FF, #B9F3FF en #8C7BFF vormen een eigen ontwerpvlak naast de storingsflow. |
+| Glacier | Gekozen uit Ahmads vier beeldreferenties. De kleuren #2F6BFF, #6FD3FF, #B9F3FF en #8C7BFF vormen de achtergrond van de volledige sectie over het klantportaal. |
 | Pint, Pest, Playwright Test en axe | Aanvullende tools voor PHP-formattering, domeintests, browserflows en geautomatiseerde toegankelijkheidscontroles. |
 
 ## Bekeken en uitgesteld
@@ -43,3 +43,9 @@ Beoordeeld voor Dockwerk op 15 november 2026. Skills zijn ontwikkelinstructies. 
 De acceptatiecriteria en gecontroleerde commando’s staan in [VOORTGANG.md](VOORTGANG.md). Bij hervatten begint Codex daar en bij de huidige Git-status. Bij een fout leggen we de eerste reproduceerbare oorzaak vast, veranderen we één relevante factor en draaien we de gerichte controle opnieuw. Nieuwe afhankelijkheden krijgen een concrete functie in de demo.
 
 Zie [referentieonderzoek](REFERENTIES.md) voor het herontwerp en de toegepaste Awwwards-criteria.
+
+### Aanvullingen op 16 november
+
+- De Playwright-skill van Currents is gebruikt bij de web-first assertions op beweging en toegankelijke bediening.
+- Lighthouse is gebruikt voor een mobiele labmeting en voor controle van contrast tijdens beweging.
+- HyperFrames is bekeken als videoworkflow. Playwright en FFmpeg leggen de live scrollbeweging vast. [Onderzoek en bronnen](REFERENTIES.md#tweede-ontwerpstudie--16-november-2026)
