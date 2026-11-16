@@ -27,6 +27,19 @@ test('de homepage is bruikbaar met toetsenbord en op mobiel', async ({ page }) =
     await page.locator('.service-pair').first().scrollIntoViewIfNeeded();
     await expect.poll(() => page.locator('.service-photo').first().evaluate(image => image.complete && image.naturalWidth > 0)).toBe(true);
     expect((await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze()).violations).toEqual([]);
+
+    const preview = page.getByRole('group', { name: 'Status van de voorbeeldmelding' });
+    const reported = preview.getByRole('radio', { name: 'Gemeld' });
+    await expect(reported).toBeChecked();
+    await expect(preview.getByText('Over de melding')).toBeVisible();
+    await reported.focus();
+    await page.keyboard.press('ArrowRight');
+    await expect(preview.getByRole('radio', { name: 'Ingepland' })).toBeChecked();
+    await expect(preview.getByText('Afspraak op 20 november')).toBeVisible();
+    await preview.getByText('Afgerond', { exact: true }).filter({ visible: true }).click();
+    await expect(preview.getByText('De eindschakelaar is opnieuw afgesteld.', { exact: false })).toBeVisible();
+    await expect(preview.getByText('Afspraak op 20 november')).toBeHidden();
+
     for (const width of [1024, 768, 390, 320, 390]) {
         await page.setViewportSize({ width, height: 844 });
         await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth)).toBe(width);

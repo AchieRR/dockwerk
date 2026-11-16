@@ -23,22 +23,22 @@
 
     <section id="onderhoud" class="shell service-section" aria-labelledby="maintenance-title">
         <div class="service-intro">
-            <span class="studio-label">Onderhoud & service</span>
-            <div data-appear><h2 id="maintenance-title">Een deur die werkt.<br>Een werkplaats die door kan.</h2><p>Voor bedrijven met laadperrons, magazijnen en werkplaatsen. Dockwerk brengt je deuren en servicehistorie bij elkaar, ook als je meerdere locaties beheert.</p></div>
+            <h2 id="maintenance-title" data-appear>Onderhoud aan bedrijfsdeuren.</h2>
+            <p data-appear>Voor bedrijven met laadperrons, magazijnen en werkplaatsen. Dockwerk brengt je deuren en servicehistorie bij elkaar, ook als je meerdere locaties beheert.</p>
         </div>
-        <article class="service-pair" data-appear>
+        <article class="service-pair">
             <figure class="service-image"><img class="service-photo" src="{{ asset('images/laadperron.webp') }}" alt="Drie bedrijfsdeuren aan het laadperron van een distributiehal" loading="lazy" width="1536" height="1024"></figure>
-            <div class="service-sheet">
-                <div class="sheet-top"><span>01 / Storingen</span><x-dock-icon name="alert" :size="19" /></div>
+            <div class="service-sheet" data-appear>
+                <x-dock-icon name="alert" :size="25" class="service-icon" />
                 <h3>Als een deur stilvalt.</h3>
                 <p>Kies de deur en beschrijf wat er gebeurt. Je melding krijgt een eigen nummer, zodat de werkplaats hem meteen bij de juiste locatie kan terugvinden.</p>
                 <a class="studio-link" href="{{ $portalUrl }}">Storing melden <x-dock-icon name="up-right" :size="16" /></a>
             </div>
         </article>
-        <article class="service-pair service-pair-reverse" data-appear>
+        <article class="service-pair service-pair-reverse">
             <figure class="service-image"><img class="service-photo" src="{{ asset('images/onderhoud.webp') }}" alt="Een monteur inspecteert de geleider van een industriële deur" loading="lazy" width="1100" height="734"></figure>
-            <div class="service-sheet">
-                <div class="sheet-top"><span>02 / Bedrijfsdeuren</span><x-dock-icon name="door" :size="19" /></div>
+            <div class="service-sheet" data-appear>
+                <x-dock-icon name="door" :size="25" class="service-icon" />
                 <h3>Grip op elke locatie.</h3>
                 <p>Open het overzicht van je bedrijf. Je ziet de geregistreerde deuren, hun locatie en de voortgang van iedere gemelde storing.</p>
                 <a class="studio-link" href="{{ $portalUrl }}">Naar je deuren <x-dock-icon name="up-right" :size="16" /></a>
@@ -48,17 +48,12 @@
 
     <section id="werkwijze" class="workflow-section" aria-labelledby="workflow-title">
         <div class="shell workflow-inner">
-            <div data-appear>
-                <p class="studio-label">In het klantportaal</p>
+            <div class="workflow-copy" data-appear>
                 <h2 id="workflow-title">Van storing<br>tot herstel.</h2>
-                <p>Je ziet zodra de werkplaats iets verandert precies wat er is gebeurd en wat je kunt verwachten.</p>
+                <p>Kies een status bij de voorbeeldmelding en zie wat er in het klantportaal verschijnt.</p>
                 <a class="button studio-primary" href="{{ $portalUrl }}">Open klantportaal <x-dock-icon name="up-right" :size="17" /></a>
             </div>
-            <ol class="studio-steps" aria-label="Stappen in een servicemelding">
-                <li data-appear><span aria-hidden="true">01</span><div><h3>Meld de storing</h3><p>Selecteer de bedrijfsdeur en beschrijf het probleem.</p></div><x-dock-icon name="list" /></li>
-                <li data-appear><span aria-hidden="true">02</span><div><h3>Bekijk je afspraak</h3><p>De werkplaats zet de geplande datum bij je melding.</p></div><x-dock-icon name="calendar" /></li>
-                <li data-appear><span aria-hidden="true">03</span><div><h3>Lees de terugkoppeling</h3><p>In de tijdlijn vind je de afronding en de toelichting.</p></div><x-dock-icon name="check" /></li>
-            </ol>
+            <x-workflow-preview />
         </div>
     </section>
 

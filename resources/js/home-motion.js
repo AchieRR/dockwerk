@@ -43,6 +43,17 @@ export function startHomeMotion() {
             scrollTrigger: { trigger: '#inhoud', start: 'top top', end: 'bottom bottom', scrub: 0.65 },
         });
 
+        for (const image of document.querySelectorAll('.service-photo')) {
+            gsap.fromTo(image,
+                { scale: 1.1, yPercent: -4 },
+                {
+                    yPercent: 4,
+                    ease: 'none',
+                    scrollTrigger: { trigger: image.parentElement, start: 'top bottom', end: 'bottom top', scrub: 0.45 },
+                },
+            );
+        }
+
         for (const element of document.querySelectorAll('[data-appear]')) {
             gsap.from(element, {
                 y: 29, duration: 0.76, ease: 'power3.out', clearProps: 'transform',

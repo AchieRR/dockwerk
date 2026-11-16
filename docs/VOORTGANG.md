@@ -51,3 +51,9 @@ Ahmad vroeg om de Glacier-versie te bewaren en een opvallendere variant te maken
 Op verzoek van Ahmad loopt de openingsfoto in beide varianten tot de linker- en rechterrand. De homepage opent standaard met de roldeur. De [lichtvariant](http://127.0.0.1:8765/?intro=licht) heeft een gecentreerde compositie en laat het licht op de foto geleidelijk opkomen.
 
 De build, Pint, 9 PHP-tests en 2 Chromium-tests slaagden. De browsertest controleert de fotobreedte van 320 tot 1440 px en de lichtvariant met minder beweging. Beide openingen zijn apart in Chromium gecontroleerd. Op 320 px had de lichtvariant geen horizontale overflow of overtredingen van de geselecteerde axe-regels.
+
+## Interactief portaalvoorbeeld en servicefoto’s
+
+Ahmad vroeg om de homepage op meerdere plekken levendiger te maken. In Werkwijze kun je nu door drie statussen van een fictieve melding gaan. Het paneel gebruikt de bestaande statuslabels en staat tussen de Glacier-banen. De servicefoto’s wisselen van kant op desktop en bewegen mee met het scrollen. De FAQ-bediening en de afsluiting hebben meer contrast. In de afsluiting komen de lamellen van de openingsanimatie terug.
+
+De voorbeeldmelding is met toetsenbord, muis en aanraakemulatie gecontroleerd. De keuzes werken op 320, 390 en 1440 px met JavaScript uit. De servicefoto verschoof 23,2 px tussen twee meetpunten in Chromium en stond stil met minder beweging. [Schermafbeelding](screenshots/portaalvoorbeeld.png)

@@ -54,4 +54,5 @@ De PHP-tests gebruiken SQLite in het geheugen. De browsertests starten een eigen
 - [Gekozen en beoordeelde skills, tools en referenties](docs/TOOLS.md)
 - [Ontwerp en beeld](DESIGN.md) · [Referentieonderzoek](docs/REFERENTIES.md)
 - [Ontwikkelstatus en verificatie](docs/VOORTGANG.md)
+- [Interactieve voorbeeldmelding](http://127.0.0.1:8765/#werkwijze) · [Schermafbeelding](docs/screenshots/portaalvoorbeeld.png)
 - [Klantportaal](docs/screenshots/klantportaal.png) · [Werkplaats](docs/screenshots/werkplaats.png) · [Mobiele homepage](docs/screenshots/homepage-mobiel.png) · [Doorlopende Glacier-achtergrond](docs/screenshots/glacier.png) · [Beweging in de vorige versie](docs/screenshots/dockwerk-motion.mp4)
