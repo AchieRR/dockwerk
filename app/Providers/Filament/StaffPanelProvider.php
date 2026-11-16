@@ -10,12 +10,16 @@ use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
+use Filament\View\PanelsRenderHook;
+use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
+use Illuminate\Foundation\Vite;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Illuminate\View\View;
 
 class StaffPanelProvider extends PanelProvider
 {
@@ -33,6 +37,8 @@ class StaffPanelProvider extends PanelProvider
             ->font('Mona Sans', url: asset('fonts/mona-sans.css'))
             ->colors(['primary' => Color::Blue])
             ->darkMode(false)
+            ->renderHook(PanelsRenderHook::STYLES_AFTER, fn (): Htmlable => app(Vite::class)('resources/css/glacier.css'))
+            ->renderHook(PanelsRenderHook::BODY_START, fn (): View => view('components.glacier'))
             ->resources([ServiceRequestResource::class])
             ->middleware([
                 EncryptCookies::class,

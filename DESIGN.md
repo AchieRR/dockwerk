@@ -4,7 +4,7 @@ De homepage is opgebouwd rond een brede avondfoto van een laadperron. Het woordm
 
 ## Glacier
 
-Glacier zit achter de volledige sectie ‘Van storing tot herstel’. Drie radiale kleurvelden maken een cyaan kern, kobaltblauw links en violet rechts. Een tweede laag van herhaalde lichtnaden verwijst naar de verticale banen in Ahmads referentie. De boven- en onderranden lopen uit naar een lichtblauw vlak. Tekst, stappen en de link naar het portaal staan voor de achtergrond.
+Glacier is de doorlopende achtergrond van de homepage, het inlogscherm, het klantportaal en de werkplaats. Drie radiale kleurvelden maken een cyaan kern, kobaltblauw links en violet rechts. Een tweede laag van herhaalde lichtnaden verwijst naar de verticale banen in Ahmads referentie. De openingsfoto heeft een smalle marge die Glacier zichtbaar maakt. Formulieren en tabellen staan op rustigere oppervlakken, zodat ze goed leesbaar blijven.
 
 ## Beweging
 
@@ -12,4 +12,4 @@ GSAP laat de cover bij openen van dichtbij naar de ruststand bewegen. Bij scroll
 
 De FAQ en het mobiele menu gebruiken native HTML-disclosures. De foto van het laadperron heeft een afzonderlijke mobiele uitsnede. Mona Sans en de drie gegenereerde projectfoto’s staan lokaal in de app.
 
-[Referenties en werkwijze](docs/REFERENTIES.md) · [Browservideo](docs/screenshots/dockwerk-motion.mp4)
+[Referenties en werkwijze](docs/REFERENTIES.md) · [Browservideo van de eerdere achtergrond](docs/screenshots/dockwerk-motion.mp4)

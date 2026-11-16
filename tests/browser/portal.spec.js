@@ -36,6 +36,7 @@ test('de homepage is bruikbaar met toetsenbord en op mobiel', async ({ page }) =
     await expect(page.getByRole('navigation', { name: 'Mobiele navigatie' })).toBeHidden();
     await page.getByRole('link', { name: 'Klantportaal', exact: true }).click();
     await expect(page.getByRole('heading', { name: 'Welkom terug.' })).toBeVisible();
+    await expect(page.locator('body > .glacier')).toHaveCSS('position', 'absolute');
     await page.getByRole('button', { name: 'Noordkade', exact: true }).click();
     await expect(page.getByLabel('E-mailadres')).toHaveValue('noordkade@dockwerk.test');
     await expect(page.getByRole('button', { name: 'Inloggen', exact: true })).toBeFocused();
@@ -53,9 +54,11 @@ test('de homepage is bruikbaar met toetsenbord en op mobiel', async ({ page }) =
     await expect.poll(coverShift).toBeGreaterThan(24);
     await page.getByRole('link', { name: 'Werkwijze', exact: true }).click();
     await expect(page.locator('.workflow-section')).toBeInViewport();
-    expect(await page.locator('.glacier').evaluate((element) => {
-        return getComputedStyle(element).position === 'absolute'
-            && element.getBoundingClientRect().width === element.parentElement.getBoundingClientRect().width;
+    const backdrop = page.locator('body > .glacier');
+    await expect(backdrop).toHaveCSS('position', 'absolute');
+    expect(await backdrop.evaluate((element) => {
+        const { width, height } = element.getBoundingClientRect();
+        return width === window.innerWidth && height === document.body.getBoundingClientRect().height;
     })).toBe(true);
     await page.getByText('Waar vind ik mijn afspraakdatum?', { exact: true }).click();
     await expect(page.getByText('Open de melding vanuit het overzicht.', { exact: false })).toBeVisible();
@@ -88,6 +91,7 @@ test('van melding naar afspraak en afronding met gescheiden bedrijven', async ({
         await employee.waitForURL('**/werkplaats/meldingen', { waitUntil: 'commit' });
         await expect(employee.getByRole('heading', { name: 'Storingsmeldingen' })).toBeVisible({ timeout: 30_000 });
         await employee.waitForFunction(() => window.Livewire?.all().length > 0, null, { timeout: 45_000 });
+        await expect(employee.locator('body > .glacier')).toHaveCSS('position', 'absolute');
         const row = employee.getByRole('row').filter({ hasText: title });
         await row.getByRole('button', { name: 'Bekijken' }).click();
         await expect(employee.getByRole('dialog')).toContainText('De poort stopt halverwege');

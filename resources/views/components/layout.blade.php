@@ -9,9 +9,10 @@
     <link rel="icon" href="{{ asset('images/dockwerk-mark.svg') }}" type="image/svg+xml">
     <link rel="preload" href="{{ asset('fonts/mona-sans-latin.woff2') }}" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="{{ asset('fonts/mona-sans.css') }}">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/css/glacier.css', 'resources/js/app.js'])
 </head>
-<body class="mode-{{ $mode }}">
+<body class="glacier-page mode-{{ $mode }}">
+    <x-glacier />
     <a href="#inhoud" class="skip-link">Naar inhoud</a>
     <header class="masthead">
         <div class="shell nav">

@@ -33,3 +33,9 @@ De website is als lokale portfoliodemo gebouwd. `DOCKWERK_DEMO` staat standaard 
 - Vite-build, 9 PHP-tests (41 assertions), Pint en 2 Chromium-tests slaagden. De [MP4](screenshots/dockwerk-motion.mp4) toont circa 10 seconden van de live scroll, Glacier en de FAQ.
 - Lighthouse 13.6.0 gaf op de lokale mobiele simulatie toegankelijkheid 100 en best practices 100. De prestatiemeting schommelde in de lokale dev-omgeving. In de geïsoleerde meting was LCP 3,7 s met een trage eerste Laravel-respons en een lange ongespecificeerde taak. Lenis is vervolgens afgesplitst van de animatiebundel voor touch. Een meting op online hosting staat open.
 - Na de splitsing slaagde de gerichte homepage-browsertest opnieuw. Het netwerkverkeer in Chromium bevestigt: desktop laadt GSAP en Lenis, touch laadt GSAP, en reduced motion begint met alleen de algemene JavaScript-bundel.
+
+## Glacier over de hele site
+
+Op verzoek van Ahmad loopt Glacier van de navigatie tot de voettekst. De gedeelde CSS-laag staat achter de homepage, het inlogscherm, het klantportaal en de werkplaats. De openingsfoto heeft ruimte langs de randen. Formulieren en tabellen staan op lichte vlakken.
+
+De Vite-build, 9 PHP-tests (41 assertions), Pint en 2 Chromium-tests slaagden. Op de homepage is de laag op desktop en mobiel even breed en hoog als de hele pagina. Inloggen, het klantportaal en de werkplaats zijn ook in Chromium bekeken. De bijgewerkte schermafbeeldingen staan in de [README](../README.md#verder-lezen).

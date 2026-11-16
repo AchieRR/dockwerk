@@ -17,7 +17,7 @@
     --radius: 8px;
     font-family: "Mona Sans", system-ui, sans-serif;
     color: var(--ink);
-    background: #f7f7f3;
+    background: #dce8ff;
     font-synthesis: none;
 }
 * { box-sizing: border-box; }
@@ -33,7 +33,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .shell { width: min(100% - 112px, 1312px); margin-inline: auto; }
 .skip-link { position: fixed; z-index: 10; top: 10px; left: 16px; padding: 10px 16px; background: white; transform: translateY(-160%); border-radius: 8px; }
 .skip-link:focus { transform: translateY(0); }
-.masthead { background: white; border-bottom: 1px solid var(--line); position: relative; z-index: 1; }
+.masthead { background: var(--glacier-chrome); border-bottom: 1px solid var(--line); position: relative; z-index: 1; }
 .nav { display: flex; align-items: center; min-height: 76px; gap: 24px; justify-content: space-between; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-size: 1.52rem; font-weight: 800; letter-spacing: -.065em; line-height: 1; flex-shrink: 0; }
 .brand-dot { color: #285bcd; }
@@ -48,7 +48,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .button-quiet { background: white; color: var(--ink); border-color: var(--line); }
 .button-quiet:hover { background: var(--canvas); }
 
-.footer { background: #fff; border-top: 1px solid var(--line); padding-block: 21px; }
+.footer { background: var(--glacier-chrome); border-top: 1px solid var(--line); padding-block: 21px; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
 .footer .brand { font-size: 1.19rem; }
 .footer p, .footer small { color: var(--muted); font-size: .82rem; }
@@ -60,7 +60,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .login-overlay { z-index: -1; background: linear-gradient(0deg, #151915ed 2%, #15191579 32%, transparent 66%); }
 .login-intro h1 { margin: 9px 0 13px; font-size: clamp(2.3rem, 4vw, 4.2rem); font-weight: 585; line-height: 1.02; letter-spacing: -.047em; }
 .login-intro > p:last-child { color: #e3edf9; line-height: 1.55; max-width: 32ch; }
-.login-form-card { padding: clamp(24px, 4vw, 48px); background: white; border: 1px solid var(--line); border-radius: var(--radius); }
+.login-form-card { padding: clamp(24px, 4vw, 48px); background: var(--glacier-surface); border: 1px solid var(--line); border-radius: var(--radius); }
 .login-form-card h2, .form-panel h1 { margin: 0 0 6px; font-size: clamp(2rem, 4vw, 3rem); font-weight: 820; line-height: 1.08; letter-spacing: -.062em; }
 .muted { color: var(--muted); line-height: 1.6; }
 .stacked-form { display: flex; flex-direction: column; align-items: flex-start; margin-top: 23px; }
@@ -81,7 +81,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 .portal-shell, .narrow-shell { padding-block: 32px 70px; }
 .narrow-shell { max-width: 690px; }
-.portal-hero { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-radius: var(--radius); color: var(--ink); background: white; border: 1px solid var(--line); border-top: 3px solid #688de8; padding: clamp(24px, 4vw, 48px); }
+.portal-hero { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-radius: var(--radius); color: var(--ink); background: var(--glacier-surface); border: 1px solid var(--line); border-top: 3px solid #688de8; padding: clamp(24px, 4vw, 48px); }
 .portal-hero h1, .detail-heading h1 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 650; letter-spacing: -.045em; line-height: 1.11; margin-block: 6px 9px; overflow-wrap: anywhere; }
 .portal-hero p:not(.eyebrow) { color: var(--muted); }
 .portal-hero .hero-kicker { color: #2853b3; }

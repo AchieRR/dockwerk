@@ -41,7 +41,6 @@
     </section>
 
     <section id="werkwijze" class="workflow-section" aria-labelledby="workflow-title">
-        <div class="glacier" aria-hidden="true"><div class="glacier-glow"></div><div class="glacier-panes"></div></div>
         <div class="shell workflow-inner">
             <div data-appear>
                 <p class="studio-label">In het klantportaal</p>

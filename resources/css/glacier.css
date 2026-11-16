@@ -1,0 +1,54 @@
+body.glacier-page,
+body.fi-panel-staff {
+    --glacier-base: #dce8ff;
+    --glacier-surface: #f6faff;
+    --glacier-chrome: #e7efffda;
+    position: relative;
+    isolation: isolate;
+    background: var(--glacier-base);
+}
+
+.glacier {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: clip;
+    pointer-events: none;
+}
+
+.glacier-glow,
+.glacier-panes {
+    position: absolute;
+    inset: 0;
+}
+
+.glacier-glow {
+    inset: -10%;
+    background:
+        radial-gradient(ellipse at 47% 39%, #c3f5ff 0%, #8cdeffdc 27%, transparent 61%),
+        radial-gradient(ellipse at 85% 60%, #9f91fce6 5%, #b3a8ff7a 34%, transparent 66%),
+        radial-gradient(ellipse at 17% 45%, #678ff7e8 7%, #89a7feaa 40%, transparent 72%),
+        linear-gradient(110deg, #b7cbff, #e3f5ff 52%, #cec5ff);
+}
+
+.glacier-panes {
+    --pane-width: clamp(78px, 12.5vw, 240px);
+    background: repeating-linear-gradient(
+        90deg,
+        #fbfeff56 0,
+        transparent 11px,
+        transparent calc(var(--pane-width) - 4px),
+        #3e5cb014 calc(var(--pane-width) - 2px),
+        #f0fbff86 var(--pane-width)
+    );
+    mask-image: radial-gradient(ellipse at 50% 49%, #000 29%, #000c 69%, #0005 100%);
+}
+
+.fi-panel-staff > .glacier {
+    opacity: .68;
+}
+
+.fi-panel-staff .fi-topbar,
+.fi-panel-staff .fi-main-sidebar {
+    background: #e7efff;
+}

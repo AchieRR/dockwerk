@@ -11,7 +11,7 @@ export function startHomeMotion() {
         const wordmark = cover.querySelector('h1');
         const photograph = cover.querySelector('.hero-photo');
         const coverPicture = cover.querySelector('.cover-picture');
-        const workflow = document.querySelector('.workflow-section');
+        const backdropGlow = document.querySelector('.glacier-glow');
 
         gsap.timeline({ defaults: { ease: 'power3.out' } })
             .from(photograph, { scale: 1.11, duration: 1.55 }, 0)
@@ -24,9 +24,9 @@ export function startHomeMotion() {
             scrollTrigger: { trigger: cover, start: 'top 65px', end: 'bottom top', scrub: 0.55 },
         });
 
-        gsap.to(workflow.querySelector('.glacier-glow'), {
-            xPercent: 9, yPercent: -8, ease: 'none',
-            scrollTrigger: { trigger: workflow, start: 'top bottom', end: 'bottom top', scrub: 0.65 },
+        gsap.to(backdropGlow, {
+            xPercent: 6, yPercent: -4, ease: 'none',
+            scrollTrigger: { trigger: '#inhoud', start: 'top top', end: 'bottom bottom', scrub: 0.65 },
         });
 
         for (const element of document.querySelectorAll('[data-appear]')) {
