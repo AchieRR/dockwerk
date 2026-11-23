@@ -43,4 +43,4 @@ Volg in de code één melding van `routes/web.php` naar de controller, de policy
 
 ## Scope van deze demo
 
-Het eerste project ondersteunt een datum bij een melding, één rechtenset voor medewerkers en fictieve gegevens. Een monteursrooster, e-mails, bestandsuploads, hosting en integraties vragen een afzonderlijke uitbreiding.
+Het project ondersteunt een datum bij een melding, één rechtenset voor medewerkers en fictieve gegevens. De [online demo](DEPLOYMENT.md) draait als PHP-container op Vercel met een eigen PostgreSQL-database bij Neon. Een monteursrooster, e-mails en bestandsuploads vragen een afzonderlijke uitbreiding.

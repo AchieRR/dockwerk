@@ -1,6 +1,6 @@
 # Werkstatus
 
-Bijgewerkt op 16 november 2026.
+Bijgewerkt op 23 november 2026.
 
 - [x] Brief, huisstijl, eigen logo, foto’s en lokaal project vastgelegd.
 - [x] Klant kan een eigen deur melden en de status openen.
@@ -23,7 +23,7 @@ Bijgewerkt op 16 november 2026.
 
 De eerste browsercheck bracht een naamclash tussen de eigen Blade-icooncomponent en Filament aan het licht. De component kreeg een projectspecifieke naam. Gebruikersfeedback op de eerste homepage leidde tot een nieuw open raster, nieuw beeld en een afzonderlijk Glacier-vlak. Na onafhankelijke beoordeling zijn het lichte palet in het klantportaal doorgetrokken en het Glacier-vlak op mobiel compacter gemaakt. De browsertest wacht expliciet op de interactieve Livewire-tabel voordat hij acties uitvoert. De statusfilter is ook apart in de lokale demo bediend.
 
-De website is als lokale portfoliodemo gebouwd. `DOCKWERK_DEMO` staat standaard uit in `.env.example`. Hosting voor derden heeft een aparte omgeving nodig.
+De website is als portfoliodemo gebouwd. `DOCKWERK_DEMO` staat standaard uit in `.env.example`. De online demo heeft een eigen Vercel-omgeving en Neon-database.
 
 ## Herontwerp van 16 november
 
@@ -57,3 +57,15 @@ De build, Pint, 9 PHP-tests en 2 Chromium-tests slaagden. De browsertest control
 Ahmad vroeg om de homepage op meerdere plekken levendiger te maken. In Werkwijze kun je nu door drie statussen van een fictieve melding gaan. Het paneel gebruikt de bestaande statuslabels en staat tussen de Glacier-banen. De servicefoto’s wisselen van kant op desktop en bewegen mee met het scrollen. De FAQ-bediening en de afsluiting hebben meer contrast. In de afsluiting komen de lamellen van de openingsanimatie terug.
 
 De voorbeeldmelding is met toetsenbord, muis en aanraakemulatie gecontroleerd. De keuzes werken op 320, 390 en 1440 px met JavaScript uit. De servicefoto verschoof 23,2 px tussen twee meetpunten in Chromium en stond stil met minder beweging. [Schermafbeelding](screenshots/portaalvoorbeeld.png)
+
+## Openbare Vercel-demo op 23 november
+
+- De lokale server draait op http://127.0.0.1:8765.
+- De nieuwste versie staat in `main` en op `codex/dockwerk-motion` in GitHub. De bewaarde tag `glacier-v1` bestaat nog.
+- De website staat op https://dockwerk-sable.vercel.app. Het project is gekoppeld aan GitHub en bouwt `main` automatisch.
+- Vercel Authentication en wachtwoordbeveiliging staan voor dit project uit. In een nieuwe Chromium-sessie zonder cookies of bypassheaders opende de homepage direct met HTTP 200. De foto, interactieve voorbeeldmelding en 390 px-weergave zijn gecontroleerd.
+- De gratis Neon-database in Frankfurt bevat de drie fictieve accounts. Het aanmaken en accepteren van de voorwaarden is door Ahmad goedgekeurd. De lokale SQLite-database is behouden.
+- Online zijn de klantlogin, het aanmaken van een melding, inplannen, afronden en teruglezen van de tijdlijn uitgevoerd. De tweede klant kreeg een 404 voor die melding en een 403 voor de werkplaats. De eigen tijdelijke testmelding is daarna verwijderd.
+- De Vite-build, 9 PHP-tests met 41 assertions en Pint slaagden. De online Chromium-controle meldde geen JavaScript-fouten op de geteste homepage.
+
+De [deploymentdocumentatie](DEPLOYMENT.md) beschrijft de container, omgevingsvariabelen en gedeelde database.
