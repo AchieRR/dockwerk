@@ -50,6 +50,7 @@ De PHP-tests gebruiken SQLite in het geheugen. De browsertests starten een eigen
 
 ## Verder lezen
 
+- [Online demo op Vercel](https://dockwerk-sable.vercel.app) · [Deploymentconfiguratie](docs/DEPLOYMENT.md)
 - [Datamodel, gebruikersrechten en statuslogica](docs/ARCHITECTUUR.md)
 - [Gekozen en beoordeelde skills, tools en referenties](docs/TOOLS.md)
 - [Ontwerp en beeld](DESIGN.md) · [Referentieonderzoek](docs/REFERENTIES.md)

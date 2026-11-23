@@ -28,6 +28,8 @@ Beoordeeld voor Dockwerk op 15 november 2026. Skills zijn ontwikkelinstructies. 
 
 ## Bekeken en uitgesteld
 
+Op 23 november 2026 zijn Vercel CLI en de Vercel-deploymentskill gebruikt voor publicatie. De app wordt als PHP-container gebouwd en gebruikt een gratis Neon PostgreSQL-database. Zie [deployment](DEPLOYMENT.md) voor configuratie en openbare toegang.
+
 | Skill, tool of referentie | Waarom |
 | --- | --- |
 | Graphive / Graphify | Graphify is de gevonden codegraaftool. Het is niet bevestigd dat dit hetzelfde product is als het genoemde Graphive. De gekoppelde Markdown-pagina’s hebben hier genoeg structuur. [Graphify](https://github.com/Graphify-Labs/graphify) |

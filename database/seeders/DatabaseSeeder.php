@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        if (! config('dockwerk.demo') || ! app()->environment(['local', 'testing'])) {
+        if (! config('dockwerk.demo') || ! app()->environment(['local', 'testing', 'preview'])) {
             return;
         }
 

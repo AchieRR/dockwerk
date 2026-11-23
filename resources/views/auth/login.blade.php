@@ -23,7 +23,7 @@
                 <x-field-error field="password" />
                 <button class="button button-dark full-button" type="submit">Inloggen <x-dock-icon name="arrow" :size="18" /></button>
             </form>
-            @if (config('dockwerk.demo') && app()->environment(['local', 'testing']))
+            @if (config('dockwerk.demo') && app()->environment(['local', 'testing', 'preview']))
                 <aside class="demo-box" aria-labelledby="demo-title">
                     <h3 id="demo-title">Probeer de demo</h3>
                     <p>Kies een account om de inlogvelden in te vullen.</p>
